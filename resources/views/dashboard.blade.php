@@ -12,6 +12,29 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
+
+            <table class="table-auto">
+                <thead>
+                    <tr>
+                        <th>T/r</th>
+                        <th>Product name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($products as $item)
+                        <tr>
+                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->price }}</td>
+                        </tr>
+                    @empty
+                        <tr>
+                           <td> {{ __('No products found') }}</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </div>
 </x-app-layout>
