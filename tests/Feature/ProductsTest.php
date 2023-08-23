@@ -13,7 +13,7 @@ class ProductsTest extends TestCase
      */
     public function test_table_empty_or_had_value(): void
     {
-        $response = $this->get('/');
+        $response = $this->get('/products');
 
         $response->assertStatus(200);
     }
